@@ -1,0 +1,48 @@
+/* ============================================================================
+ * NO BENCH PLAYERS — identity tokens (separate entity from EvoToca FC)
+ *
+ * No Bench Players (formerly The Open Game Project) is a NON-PROFIT youth
+ * soccer access fund. Its identity is related to EvoToca by typeface only
+ * (Plus Jakarta Sans — shared DNA); everything else is deliberately distinct:
+ * LIGHT, civic-warm paper canvas, deep pitch-green accent, near-black ink.
+ * EvoToca's brand yellow may appear only as a tiny "thread" (a highlight
+ * underline) acknowledging the family connection — never as a primary color.
+ *
+ * Scope: apply the `nbp-theme` class to a page/section root. These tokens do
+ * not leak into EvoToca surfaces.
+ * ==========================================================================*/
+
+.nbp-theme {
+  /* ---- Canvas & surfaces ---------------------------------------------- */
+  --nbp-paper: oklch(0.975 0.008 95);        /* warm off-white page */
+  --nbp-paper-deep: oklch(0.945 0.012 95);   /* tinted band */
+  --nbp-card: oklch(0.995 0.003 95);         /* near-white card */
+  --nbp-ink: oklch(0.24 0.012 95);           /* warm near-black text */
+  --nbp-ink-muted: oklch(0.49 0.015 95);     /* secondary text */
+
+  /* ---- Accent ----------------------------------------------------------- */
+  --nbp-green: oklch(0.46 0.09 155);         /* deep pitch green — primary */
+  --nbp-green-deep: oklch(0.35 0.075 155);   /* hover / dark band */
+  --nbp-green-tint: oklch(0.46 0.09 155 / 8%);
+  --nbp-on-green: oklch(0.985 0.005 95);
+
+  /* The EvoToca thread — tiny highlight only (underline marks, rules) */
+  --nbp-thread: #FFCC00;
+
+  /* ---- Lines ------------------------------------------------------------ */
+  --nbp-hairline: oklch(0.24 0.012 95 / 14%);
+  --nbp-rule: 1px solid var(--nbp-hairline);
+
+  /* ---- Type (Plus Jakarta Sans = shared family DNA) --------------------- */
+  --nbp-font: var(--font-sans);
+  --nbp-display: 800 clamp(2.5rem, 5vw, 4.25rem)/1.05 var(--font-sans);
+  --nbp-h2: 700 2rem/1.15 var(--font-sans);
+  --nbp-h3: 700 1.125rem/1.3 var(--font-sans);
+  --nbp-body: 400 1.0625rem/1.65 var(--font-sans);
+  --nbp-small: 400 0.875rem/1.6 var(--font-sans);
+  --nbp-eyebrow-ls: 0.18em;
+
+  /* ---- Shape ------------------------------------------------------------ */
+  --nbp-radius: 14px;
+  --nbp-radius-pill: 999px;
+}

@@ -1,0 +1,44 @@
+/* ============================================================================
+ * EvoToca Development Index — SPACING, RADII & LAYOUT TOKENS
+ *
+ * EDI is built on Tailwind v4 + shadcn/ui, so spacing follows the 4px grid
+ * (gap-2 = 8px, gap-3 = 12px, gap-4 = 16px, py-12 = 48px …). Radii derive from
+ * a single --radius base of 0.625rem (10px); cards use rounded-xl, buttons
+ * rounded-lg, pills/badges rounded-full.
+ * ==========================================================================*/
+
+:root {
+  /* ---- Spacing scale (4px grid) -------------------------------------- */
+  --space-0: 0;
+  --space-1: 0.25rem;   /* 4 */
+  --space-2: 0.5rem;    /* 8  — gap between chips/badges */
+  --space-3: 0.75rem;   /* 12 — default gap between stacked cards */
+  --space-4: 1rem;      /* 16 — card padding (px-4 py-4) */
+  --space-5: 1.25rem;   /* 20 */
+  --space-6: 1.5rem;    /* 24 — page gutter (px-6) */
+  --space-8: 2rem;      /* 32 */
+  --space-10: 2.5rem;   /* 40 — gap between dashboard sections */
+  --space-12: 3rem;     /* 48 — vertical page padding (py-12) */
+  --space-16: 4rem;     /* 64 */
+  --space-20: 5rem;     /* 80 — generous top padding (sm:py-20) */
+
+  /* ---- Radii ---------------------------------------------------------- */
+  --radius: 0.625rem;                         /* 10px — the base */
+  --radius-sm: calc(var(--radius) * 0.6);     /* 6px */
+  --radius-md: calc(var(--radius) * 0.8);     /* 8px  — buttons (rounded-lg ≈) */
+  --radius-lg: var(--radius);                 /* 10px */
+  --radius-xl: calc(var(--radius) * 1.4);     /* 14px — cards (rounded-xl) */
+  --radius-2xl: calc(var(--radius) * 1.8);    /* 18px */
+  --radius-pill: 9999px;                      /* chips, badges, avatars, FAB count */
+
+  /* ---- Content widths ------------------------------------------------- */
+  --width-prose: 42rem;     /* max-w-2xl — sign-in / coach list / parent list */
+  --width-dashboard: 48rem; /* max-w-3xl — parent player dashboard */
+  --width-video: 56rem;     /* max-w-4xl — tagging video + footer bar */
+
+  /* ---- Touch targets -------------------------------------------------- */
+  --tap-min: 2.75rem;       /* 44px floor for interactive controls */
+  --control-h: 2rem;        /* 32px — default button / input height (h-8) */
+  --control-h-sm: 1.75rem;  /* 28px — sm */
+  --control-h-lg: 2.25rem;  /* 36px — lg */
+}

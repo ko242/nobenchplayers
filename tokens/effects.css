@@ -1,0 +1,44 @@
+/* ============================================================================
+ * EvoToca Development Index — EFFECTS: borders, shadows, focus, motion
+ *
+ * EDI's surfaces are flat and quiet. Depth comes from a 1px white-at-10%
+ * hairline (ring/border), NOT drop shadows. The one signature elevation is
+ * the brand-yellow GLOW that appears on hovered link cards:
+ *     box-shadow: 0 0 0 1px var(--brand-yellow), 0 0 20px -5px var(--brand-yellow)
+ * Transitions are short colour/border crossfades (transition-colors, ~150ms).
+ * No bounces, no large translates — buttons nudge down 1px on press.
+ * ==========================================================================*/
+
+:root {
+  /* ---- Hairlines ------------------------------------------------------ */
+  --border-width: 1px;
+  --hairline: 1px solid var(--border);          /* default card/divider line */
+  --ring-card: inset 0 0 0 1px oklch(1 0 0 / 10%); /* @kind shadow */ /* the ring-1 ring-foreground/10 on cards */
+
+  /* ---- Shadows -------------------------------------------------------- */
+  /* Used sparingly — toasts, the sub-metric bottom sheet, popovers. */
+  --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.4);
+  --shadow-md: 0 4px 12px oklch(0 0 0 / 0.45);
+  --shadow-lg: 0 10px 30px -8px oklch(0 0 0 / 0.6);   /* sheet / toast */
+
+  /* THE signature: brand-yellow focus glow on hovered nav/link cards */
+  --glow-brand: 0 0 0 1px var(--brand-yellow), 0 0 20px -5px var(--brand-yellow);
+
+  /* ---- Focus ring ----------------------------------------------------- */
+  --focus-ring: 0 0 0 3px color-mix(in srgb, var(--ring) 50%, transparent);
+  --focus-ring-brand: 0 0 0 3px color-mix(in srgb, var(--brand-yellow) 50%, transparent);
+
+  /* ---- Backdrop ------------------------------------------------------- */
+  /* Sticky footer / sheet overlays use a translucent surface + blur. */
+  --backdrop-blur: saturate(180%) blur(8px); /* @kind other */
+  --surface-translucent: oklch(0.13 0 0 / 0.7);  /* bg-background/70 */
+  --scrim: oklch(0 0 0 / 0.6);                    /* dialog / sheet scrim */
+
+  /* ---- Motion --------------------------------------------------------- */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --ease-out: cubic-bezier(0, 0, 0.2, 1); /* @kind other */
+  --duration-fast: 120ms;    /* @kind other */ /* color hovers */
+  --duration-base: 150ms;    /* @kind other */ /* transition-colors default */
+  --duration-slow: 200ms;    /* @kind other */ /* card hover border + glow */
+  --press-translate: 1px;    /* active:translate-y-px on buttons */
+}

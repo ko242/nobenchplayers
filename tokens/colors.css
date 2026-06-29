@@ -1,0 +1,86 @@
+/* ============================================================================
+ * EvoToca Development Index — COLOR TOKENS
+ *
+ * EDI ships dark-only. layout.tsx hard-codes className="dark"; there is no
+ * light theme in the product. These tokens reproduce the `.dark` block of the
+ * app's globals.css exactly, then add semantic aliases.
+ *
+ * Two color worlds live here:
+ *   1. The neutral UI scale (near-black surfaces, white-ish text) — shadcn/ui
+ *      grayscale in oklch.
+ *   2. The brand + data palette — brand yellow #FFCC00 plus the five
+ *      sub-metric colors (blue/green/yellow/red/purple) used in donuts,
+ *      dots, badges, and trend pills.
+ * ==========================================================================*/
+
+:root {
+  /* ---- Brand ---------------------------------------------------------- */
+  --brand-yellow: #FFCC00;            /* the one accent. Buttons, eyebrows, focus, active. */
+  --brand-yellow-foreground: oklch(0.13 0 0);  /* near-black text ON yellow */
+  --brand-black: oklch(0.13 0 0);     /* the canvas — matches the logo lockups */
+
+  /* ---- Neutral surfaces (dark) ---------------------------------------- */
+  --background: oklch(0.13 0 0);      /* app canvas ~#1f1f1f */
+  --foreground: oklch(0.985 0 0);     /* primary text, near-white */
+  --card: oklch(0.18 0 0);            /* raised surface */
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.18 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+
+  /* ---- Roles ---------------------------------------------------------- */
+  /* In dark mode the shadcn "primary" role IS brand yellow (see app .dark). */
+  --primary: var(--brand-yellow);
+  --primary-foreground: oklch(0.13 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);   /* secondary / caption text */
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+
+  /* ---- Lines & fields ------------------------------------------------- */
+  --border: oklch(1 0 0 / 10%);       /* hairline — white at 10% */
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);           /* focus ring base */
+
+  /* ============================================================
+   * DATA / SUB-METRIC PALETTE
+   * Five fixed colors for the 16 development categories. Tuned for
+   * dark mode (the Tailwind *-400 steps). Used in donuts, color dots,
+   * tier badges, and the "what was tagged" lists.
+   * ============================================================ */
+  --metric-blue:   #60a5fa;   /* best positive */
+  --metric-green:  #4ade80;   /* good positive */
+  --metric-yellow: #facc15;   /* neutral (≈ brand yellow) */
+  --metric-red:    #f87171;   /* negative */
+  --metric-purple: #c084fc;   /* top tier of effort categories */
+
+  /* Tier badge colors */
+  --tier-beginner:   #f87171; /* red-400 */
+  --tier-developing: #fbbf24; /* amber-400 */
+  --tier-strong:     var(--brand-yellow);
+  --tier-advanced:   #4ade80; /* green-400 */
+
+  /* Trend directions */
+  --trend-improving:   #4ade80;
+  --trend-steady:      var(--muted-foreground);
+  --trend-needs-focus: #f87171;
+
+  /* ---- Semantic text aliases ----------------------------------------- */
+  --text-primary: var(--foreground);
+  --text-muted: var(--muted-foreground);
+  --text-on-brand: var(--brand-yellow-foreground);
+  --text-brand: var(--brand-yellow);
+
+  /* ---- Semantic surface aliases -------------------------------------- */
+  --surface-page: var(--background);
+  --surface-card: var(--card);
+  --surface-raised: var(--popover);
+
+  /* Brand-yellow tints used all over EDI for emphasis borders / fills */
+  --brand-tint-10: oklch(0.85 0.17 95 / 10%);   /* yellow at ~10% */
+  --brand-border-30: color-mix(in srgb, var(--brand-yellow) 30%, transparent);
+  --brand-border-40: color-mix(in srgb, var(--brand-yellow) 40%, transparent);
+  --brand-border-50: color-mix(in srgb, var(--brand-yellow) 50%, transparent);
+}

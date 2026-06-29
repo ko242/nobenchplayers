@@ -1,0 +1,10 @@
+/* EvoToca Development Index — webfonts.
+ *
+ * The product ships in a single typeface: Plus Jakarta Sans, loaded in
+ * layout.tsx via next/font as the CSS var --font-sans (used for body, headings
+ * AND the mono slot — there is no separate mono face in EDI).
+ *
+ * Plus Jakarta Sans is a real Google Font — no substitution. The @import below
+ * pulls the full weight range consumers need (300–800). */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');

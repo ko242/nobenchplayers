@@ -1,0 +1,361 @@
+<!-- @dsCard group="No Bench Players" viewport="1280x800" name="No Bench Players — website" subtitle="Single-page non-profit site: three pillars, numbers, guardrails, founding-partner CTA" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>No Bench Players — a youth soccer access fund</title>
+<meta name="description" content="A North Texas non-profit youth soccer access fund. We find kids who want top development, train them for free, and connect them to top coaching at a fee families can support — keeping competition open to everyone." />
+<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<meta name="theme-color" content="#266741" />
+<link rel="canonical" href="https://www.nobenchplayers.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="No Bench Players" />
+<meta property="og:url" content="https://www.nobenchplayers.com/" />
+<meta property="og:title" content="No Bench Players — every kid plays" />
+<meta property="og:description" content="A North Texas non-profit youth soccer access fund. Free training for kids who want to develop — no tryouts, no cuts, no cost. Piloting in McKinney, TX." />
+<meta property="og:image" content="https://www.nobenchplayers.com/assets/brand/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="No Bench Players — every kid plays, every coach can afford to stay" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="No Bench Players — every kid plays" />
+<meta name="twitter:description" content="Free youth soccer training in North Texas. No tryouts, no cuts, no cost." />
+<meta name="twitter:image" content="https://www.nobenchplayers.com/assets/brand/og-image.png" />
+<link rel="stylesheet" href="styles.css" />
+<script src="ui_kits/nbp_site/image-slot.js"></script>
+<style>
+  html, body { margin: 0; }
+  .nbp-theme {
+    background: var(--nbp-paper);
+    color: var(--nbp-ink);
+    font: var(--nbp-body);
+    font-family: var(--nbp-font);
+    -webkit-font-smoothing: antialiased;
+  }
+  .nbp-theme ::selection { background: var(--nbp-green); color: var(--nbp-on-green); }
+
+  .shell { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+
+  /* ---------- top bar ---------- */
+  .topbar { position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--nbp-paper) 88%, transparent); backdrop-filter: saturate(160%) blur(10px); border-bottom: var(--nbp-rule); }
+  .topbar-in { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 68px; }
+  .wordmark { display: flex; flex-direction: column; line-height: 1; gap: 2px; text-decoration: none; color: var(--nbp-ink); }
+  .wordmark .wm-top { font-size: 15px; font-weight: 800; letter-spacing: 0.04em; }
+  .wordmark .wm-sub { font-size: 9.5px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--nbp-green); }
+  .nav { display: flex; align-items: center; gap: 28px; }
+  .nav a { font-size: 14px; font-weight: 600; color: var(--nbp-ink-muted); text-decoration: none; transition: color .15s; }
+  .nav a:hover { color: var(--nbp-ink); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: var(--nbp-font); font-size: 15px; font-weight: 700; border-radius: var(--nbp-radius-pill); padding: 12px 22px; cursor: pointer; text-decoration: none; transition: background .15s, color .15s, border-color .15s; border: 1.5px solid transparent; }
+  .btn-primary { background: var(--nbp-green); color: var(--nbp-on-green); }
+  .nav a.btn-primary { color: var(--nbp-on-green); }
+  .btn-primary:hover { background: var(--nbp-green-deep); }
+  .btn-quiet { border-color: var(--nbp-hairline); color: var(--nbp-ink); background: transparent; }
+  .btn-quiet:hover { border-color: var(--nbp-ink); }
+  .btn-sm { padding: 9px 18px; font-size: 14px; }
+
+  /* ---------- shared ---------- */
+  .eyebrow { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: var(--nbp-eyebrow-ls); color: var(--nbp-green); margin: 0 0 16px; }
+  .thread { background-image: linear-gradient(var(--nbp-thread), var(--nbp-thread)); background-repeat: no-repeat; background-size: 100% 0.16em; background-position: 0 92%; }
+  section { padding: 88px 0; }
+  .h2 { font: var(--nbp-h2); letter-spacing: -0.015em; margin: 0 0 14px; max-width: 640px; text-wrap: pretty; }
+  .lede { font: var(--nbp-body); color: var(--nbp-ink-muted); max-width: 620px; margin: 0; text-wrap: pretty; }
+
+  /* ---------- hero ---------- */
+  .hero { padding: 84px 0 72px; }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items: center; }
+  .hero h1 { font: var(--nbp-display); letter-spacing: -0.02em; margin: 0 0 22px; text-wrap: balance; }
+  .hero .lede { font-size: 1.125rem; margin-bottom: 30px; }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .hero-note { font: var(--nbp-small); color: var(--nbp-ink-muted); margin-top: 18px; }
+
+  /* ---------- three things ---------- */
+  .band { background: var(--nbp-paper-deep); border-top: var(--nbp-rule); border-bottom: var(--nbp-rule); }
+  .three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
+  .pillar { background: var(--nbp-card); border: var(--nbp-rule); border-radius: var(--nbp-radius); padding: 28px 26px; display: flex; flex-direction: column; gap: 12px; }
+  .pillar .num { font-size: 13px; font-weight: 800; color: var(--nbp-green); letter-spacing: 0.08em; }
+  .pillar h3 { font: var(--nbp-h3); margin: 0; }
+  .pillar p { font: var(--nbp-small); color: var(--nbp-ink-muted); margin: 0; }
+
+  /* ---------- problem ---------- */
+  .problem-list { display: flex; flex-direction: column; margin-top: 36px; max-width: 760px; }
+  .problem { display: grid; grid-template-columns: 56px 1fr; gap: 20px; padding: 24px 0; border-top: var(--nbp-rule); align-items: baseline; }
+  .problem:last-child { border-bottom: var(--nbp-rule); }
+  .problem .mark { font-size: 24px; font-weight: 800; color: var(--nbp-ink); opacity: 0.25; }
+  .problem p { margin: 0; font-size: 1.125rem; line-height: 1.55; max-width: 640px; text-wrap: pretty; }
+  .problem p b { font-weight: 700; }
+
+  /* ---------- path ---------- */
+  .path-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 44px; counter-reset: step; }
+  .step { position: relative; padding-top: 20px; }
+  .step::before { counter-increment: step; content: counter(step, decimal-leading-zero); font-size: 13px; font-weight: 800; letter-spacing: 0.08em; color: var(--nbp-green); position: absolute; top: -6px; left: 0; }
+  .step { border-top: var(--nbp-rule); }
+  .step h3 { font: var(--nbp-h3); margin: 0 0 8px; }
+  .step p { font: var(--nbp-small); color: var(--nbp-ink-muted); margin: 0; }
+  .path-ultimate { margin-top: 44px; font-size: 1.25rem; font-weight: 700; line-height: 1.45; letter-spacing: -0.01em; max-width: 700px; text-wrap: pretty; }
+
+  /* ---------- how it works / numbers ---------- */
+  .numbers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 44px; }
+  .stat { border-top: 3px solid var(--nbp-green); padding-top: 18px; }
+  .stat .big { font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .stat .cap { font: var(--nbp-small); color: var(--nbp-ink-muted); margin-top: 8px; }
+  .how-note { margin-top: 40px; max-width: 720px; background: var(--nbp-green-tint); border: 1px solid color-mix(in srgb, var(--nbp-green) 25%, transparent); border-radius: var(--nbp-radius); padding: 20px 24px; font: var(--nbp-small); color: var(--nbp-ink); }
+
+  /* ---------- guardrails ---------- */
+  .guard-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
+  .guard { background: var(--nbp-card); border: var(--nbp-rule); border-radius: var(--nbp-radius); padding: 28px; }
+  .guard h3 { font: var(--nbp-h3); margin: 0 0 16px; }
+  .guard ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 11px; }
+  .guard li { font: var(--nbp-small); color: var(--nbp-ink-muted); padding-left: 22px; position: relative; }
+  .guard li::before { position: absolute; left: 0; top: 0; font-weight: 800; }
+  .guard-yes li::before { content: "✓"; color: var(--nbp-green); }
+  .guard-no li::before { content: "✕"; color: oklch(0.55 0.16 25); }
+
+  /* ---------- photo band ---------- */
+  .photo-band { padding: 0 0 88px; }
+  .photos { display: grid; grid-template-columns: 1.7fr 1fr 1fr; gap: 16px; }
+  .photos image-slot { height: 300px; width: 100%; }
+  .photo-cap { font: var(--nbp-small); color: var(--nbp-ink-muted); margin-top: 14px; }
+
+  /* ---------- hope band ---------- */
+  .hope { background: var(--nbp-green-deep); color: var(--nbp-on-green); }
+  .hope .eyebrow { color: color-mix(in srgb, var(--nbp-on-green) 70%, transparent); }
+  .hope blockquote { margin: 0; font-size: clamp(1.5rem, 2.6vw, 2.125rem); font-weight: 700; line-height: 1.3; letter-spacing: -0.015em; max-width: 860px; text-wrap: balance; }
+  .hope .attr { margin-top: 22px; font: var(--nbp-small); color: color-mix(in srgb, var(--nbp-on-green) 70%, transparent); }
+
+  /* ---------- partners ---------- */
+  .partner-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; margin-top: 8px; }
+  .partner-list { margin: 24px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; }
+  .partner-list li { padding: 16px 0; border-top: var(--nbp-rule); font: var(--nbp-small); color: var(--nbp-ink-muted); display: grid; grid-template-columns: 150px 1fr; gap: 16px; }
+  .partner-list li b { color: var(--nbp-ink); font-weight: 700; }
+  .convo { background: var(--nbp-card); border: var(--nbp-rule); border-radius: var(--nbp-radius); padding: 32px; }
+  .convo h3 { font: var(--nbp-h3); margin: 0 0 10px; }
+  .convo p { font: var(--nbp-small); color: var(--nbp-ink-muted); margin: 0 0 22px; }
+  .convo .line { font-style: italic; border-left: 3px solid var(--nbp-thread); padding-left: 14px; margin: 0 0 24px; font: var(--nbp-small); color: var(--nbp-ink); }
+
+  /* ---------- footer ---------- */
+  footer { border-top: var(--nbp-rule); padding: 40px 0 56px; }
+  .foot { display: flex; justify-content: space-between; gap: 32px; flex-wrap: wrap; font: var(--nbp-small); color: var(--nbp-ink-muted); }
+  .foot .fm { max-width: 480px; }
+  .foot b { color: var(--nbp-ink); }
+
+  @media (max-width: 920px) {
+    .hero-grid, .guard-grid, .partner-grid { grid-template-columns: 1fr; }
+    .three { grid-template-columns: 1fr; }
+    .numbers, .path-steps { grid-template-columns: 1fr 1fr; }
+    .photos { grid-template-columns: 1fr; }
+    .photos image-slot { height: 240px; }
+    .nav a:not(.btn) { display: none; }
+  }
+</style>
+</head>
+<body class="nbp-theme">
+
+<header class="topbar" data-screen-label="Top bar">
+  <div class="shell topbar-in">
+    <a class="wordmark" href="#top">
+      <span class="wm-top">NO BENCH PLAYERS</span>
+      <span class="wm-sub">Youth soccer access fund</span>
+    </a>
+    <nav class="nav">
+      <a href="For Families.html">For families</a>
+      <a href="#three">What we do</a>
+      <a href="#path">The path</a>
+      <a href="#how">How it works</a>
+      <a href="#guardrails">Guardrails</a>
+      <a href="#partners">Partners</a>
+      <a class="btn btn-primary btn-sm" href="For Families.html">Sign your kid up — it's free</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" data-screen-label="Hero">
+    <div class="shell hero-grid">
+      <div>
+        <p class="eyebrow">A North Texas non-profit</p>
+        <h1>Every kid plays. Every coach can <span class="thread">afford to stay</span>.</h1>
+        <p class="lede">We are not creating another league. We find kids who want top development but can't afford it, train them for free, build teams, and connect them to top coaching at a fee families can support — while keeping competition open to everyone.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="For Families.html">Sign your kid up — it's free</a>
+          <a class="btn btn-quiet" href="#three">What we do</a>
+        </div>
+        <p class="hero-note">Piloting in McKinney, Texas and within roughly 80 miles.</p>
+      </div>
+      <image-slot id="nbp-hero" src="assets/nbp/two-players-medium.jpg" style="width: 100%; height: 420px;" shape="rounded" radius="16" placeholder="Drop a photo — kids playing in an open league"></image-slot>
+    </div>
+  </section>
+
+  <section class="band" id="three" data-screen-label="The three things">
+    <div class="shell">
+      <p class="eyebrow">What we do</p>
+      <h2 class="h2">Exactly three things.</h2>
+      <p class="lede">No mission creep. The fund exists to do these three things, and to report transparently on each of them.</p>
+      <div class="three">
+        <div class="pillar">
+          <span class="num">01</span>
+          <h3>Reduce parent fees</h3>
+          <p>Team fees, uniforms, league fees, referee fees, training space. Select soccer can cost families thousands per year — we lower that barrier directly.</p>
+        </div>
+        <div class="pillar">
+          <span class="num">02</span>
+          <h3>Supplement coaches' pay</h3>
+          <p>Restricted coach-stability grants reduce the pressure to chase short-term wins just to keep rosters — and income — intact.</p>
+        </div>
+        <div class="pillar">
+          <span class="num">03</span>
+          <h3>Open leagues only</h3>
+          <p>Participating teams must play in open, transparent, merit-based competitions — leagues anyone can join, not closed or invite-only structures.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="problem" data-screen-label="The problem">
+    <div class="shell">
+      <p class="eyebrow">Why it's needed</p>
+      <h2 class="h2">The business model works against kids and coaches.</h2>
+      <div class="problem-list">
+        <div class="problem"><span class="mark">01</span><p>Select soccer can cost families <b>thousands of dollars per year</b> — and the families who can't pay simply don't play.</p></div>
+        <div class="problem"><span class="mark">02</span><p>Coaches feel pressure to <b>win immediately</b>, because player retention affects their income. Development gets punished by the business model.</p></div>
+        <div class="problem"><span class="mark">03</span><p><b>Closed, invite-only competition structures</b> limit fair access for independent and smaller clubs.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="path" data-screen-label="The path">
+    <div class="shell">
+      <p class="eyebrow">The mission right now</p>
+      <h2 class="h2">Find the kids. Then build the team.</h2>
+      <p class="lede">There are kids who want top development — as players and as people — whose families can't afford the clubs and programs that provide it. The job right now is to find them.</p>
+      <div class="path-steps">
+        <div class="step">
+          <h3>Find the kids</h3>
+          <p>Kids and families who want to play under top youth soccer coaches but don't have the finances to get there.</p>
+        </div>
+        <div class="step">
+          <h3>Train free</h3>
+          <p>Give them an environment to train with other kids — at no cost, starting now.</p>
+        </div>
+        <div class="step">
+          <h3>Form a team</h3>
+          <p>When an age group has enough kids, we create a team with them.</p>
+        </div>
+        <div class="step">
+          <h3>Top coaching, affordable</h3>
+          <p>Connect the team to top coaching at minimal cost — a fee each family can actually support.</p>
+        </div>
+      </div>
+      <p class="path-ultimate">The ultimate mission: every kid — no matter their background or finances — can receive <span class="thread">the best coaching anywhere</span>.</p>
+      <p style="margin-top: 22px;"><a class="btn btn-primary" href="For Families.html">Sign your kid up — it's free</a></p>
+    </div>
+  </section>
+
+  <section class="band" id="how" data-screen-label="How it works">
+    <div class="shell">
+      <p class="eyebrow">How it works</p>
+      <h2 class="h2">Our goals — stated up front, reported transparently.</h2>
+      <p class="lede">To be clear: the fund is just getting started, so nothing below is a claim about today. These are the goals we hold ourselves to — every dollar will be documented against them, and clubs must show how support lowered parent cost or stabilized coach pay.</p>
+      <div class="numbers">
+        <div class="stat"><div class="big">15–75%</div><div class="cap">Goal: reduction of current family costs in year one. An example target — the real number gets reported, not promised.</div></div>
+        <div class="stat"><div class="big">$500</div><div class="cap">Long-term goal: no family pays more than $500 per player per year.</div></div>
+        <div class="stat"><div class="big">$3,000–7,500</div><div class="cap">Goal: fixed coach-stability grant per approved team, restricted to coach compensation.</div></div>
+        <div class="stat"><div class="big">100</div><div class="cap">Goal: players supported in year one — McKinney and within ~80 miles.</div></div>
+      </div>
+      <div class="how-note">
+        <b>The revolving-fund goal:</b> if any future player-related revenue ever exists (transfer, sell-on, training compensation), the goal is that 5–15% returns <em>to the fund</em> — never to a brand, company, or individual sponsor. A community fund, not athlete ownership or investor return.
+      </div>
+    </div>
+  </section>
+
+  <section id="guardrails" data-screen-label="Guardrails">
+    <div class="shell">
+      <p class="eyebrow">Guardrails</p>
+      <h2 class="h2">We fund structure — never style of play.</h2>
+      <p class="lede">Coach support stays tied to structural reform, not soccer opinions. Coaches should not have to choose between long-term player development and financial survival.</p>
+      <div class="guard-grid">
+        <div class="guard guard-yes">
+          <h3>The fund supports</h3>
+          <ul>
+            <li>Lower parent cost</li>
+            <li>Transparent fees and financial reporting</li>
+            <li>Open, transparent, merit-based competition</li>
+            <li>Background checks and safeguarding</li>
+            <li>Coach continuing education — soccer, psychology, youth development, parent communication</li>
+            <li>Coach income stability</li>
+          </ul>
+        </div>
+        <div class="guard guard-no">
+          <h3>The fund never controls</h3>
+          <ul>
+            <li>Formation or tactical style</li>
+            <li>Lineups, substitutions, or playing-time decisions</li>
+            <li>Whether a team plays direct, possession, pressing, or counterattacking</li>
+            <li>Winning records or trophies as the main standard</li>
+            <li>League status as proof of quality</li>
+            <li>Any treatment of a child or player as a sponsor's asset</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="photo-band" data-screen-label="Photos">
+    <div class="shell">
+      <div class="photos">
+        <image-slot id="nbp-photo-team" src="assets/nbp/team-photo-14s.jpg" shape="rounded" radius="16" placeholder="Drop a team photo"></image-slot>
+        <image-slot id="nbp-photo-coach" src="assets/nbp/dsc09120.jpg" shape="rounded" radius="16" placeholder="Drop a coaching photo"></image-slot>
+        <image-slot id="nbp-photo-play" src="assets/nbp/player-dribbles.jpg" shape="rounded" radius="16" placeholder="Drop a game photo"></image-slot>
+      </div>
+      <p class="photo-cap">North Texas, spring 2026. Top coaching shouldn't depend on what a family can pay.</p>
+    </div>
+  </section>
+
+  <section class="hope" data-screen-label="The hope">
+    <div class="shell">
+      <p class="eyebrow">The hope</p>
+      <blockquote>We do this so that one day institutions — and even the government — support youth sports directly, and these things become permanent.</blockquote>
+      <p class="attr">Until then, it takes community partners.</p>
+    </div>
+  </section>
+
+  <section id="partners" data-screen-label="Founding partners">
+    <div class="shell">
+      <p class="eyebrow">Founding partners</p>
+      <h2 class="h2">We don't ask for money first.</h2>
+      <div class="partner-grid">
+        <div>
+          <p class="lede">We approach businesses, schools, churches, and institutions as community partners with their own goals — not as checkbooks. Partnership can mean sponsorship, space, supplies, introductions, or credibility.</p>
+          <ul class="partner-list">
+            <li><b>Recognition</b><span>Founding-partner status, event recognition, social media and video storytelling, sponsor plaque or certificate.</span></li>
+            <li><b>Accountability</b><span>An independent accountability council reviews how funds are used — money is never controlled by one person.</span></li>
+            <li><b>Reporting</b><span>Clear documentation showing exactly how support reduced parent cost or stabilized coach pay.</span></li>
+          </ul>
+        </div>
+        <div class="convo">
+          <h3>Sign your kid up — it's free</h3>
+          <p>Free training, no tryouts, no cuts, no cost. Fill out the short form and we'll contact you directly.</p>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a class="btn btn-primary" href="For Families.html">Sign up for free training</a>
+          </div>
+          <p style="font-size: 13.5px; margin-top: 14px;">Want to partner instead? Email <a href="mailto:build@nobenchplayers.com" style="color: var(--nbp-green); font-weight: 700; text-decoration: none;">build@nobenchplayers.com</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer data-screen-label="Footer">
+  <div class="shell foot">
+    <div class="fm">
+      <b>No Bench Players</b> · a non-profit youth soccer access fund — McKinney, Texas.<br />
+      <b>EvoToca FC is the pilot club, not the movement.</b> First teams: 2014 boys and 2017 boys.
+    </div>
+    <div>Separate entity from EvoToca FC (for-profit club).<br /><a href="For Families.html" style="color: var(--nbp-green); font-weight: 700; text-decoration: none;">For families →</a><br /><a href="mailto:build@nobenchplayers.com" style="color: var(--nbp-green); font-weight: 700; text-decoration: none;">build@nobenchplayers.com</a><br /><a href="tel:+19724085483" style="color: var(--nbp-green); font-weight: 700; text-decoration: none;">(972) 408-5483 — call or text</a></div>
+  </div>
+</footer>
+
+
+</body>
+</html>

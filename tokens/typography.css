@@ -1,0 +1,64 @@
+/* ============================================================================
+ * EvoToca Development Index — TYPOGRAPHY TOKENS
+ *
+ * One typeface across the whole product: Plus Jakarta Sans. EDI aliases
+ * --font-sans, --font-heading and --font-mono all to the same face (see the
+ * app's @theme block) — there is no separate display or mono font.
+ *
+ * The signature type move in EDI is the EYEBROW: a tiny, all-caps,
+ * heavily letter-spaced label — usually in brand yellow over a section, or
+ * in muted gray for sub-labels. It appears above every page title and on
+ * every card section header.
+ * ==========================================================================*/
+
+:root {
+  /* ---- Families ------------------------------------------------------- */
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: var(--font-sans);
+  --font-mono: var(--font-sans);   /* EDI uses tabular-nums on the sans face, not a mono font */
+
+  /* ---- Weights -------------------------------------------------------- */
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;     /* card titles, buttons */
+  --weight-semibold: 600;   /* section headers, eyebrows, emphasis */
+  --weight-bold: 700;       /* page titles, big stats */
+  --weight-extrabold: 800;
+
+  /* ---- Type scale ----------------------------------------------------- */
+  /* Display / page titles — text-4xl..5xl, bold, tight tracking, leading 1.1 */
+  --text-display: 700 3rem/1.1 var(--font-heading);      /* 48px — hero h1 */
+  --text-h1: 700 2.25rem/1.15 var(--font-heading);       /* 36px — page title */
+  --text-h2: 600 1.5rem/1.25 var(--font-heading);        /* 24px */
+  --text-stat: 700 1.875rem/1 var(--font-heading);       /* 30px — big number tile */
+
+  /* Body */
+  --text-lg: 400 1.125rem/1.6 var(--font-sans);          /* 18px lede */
+  --text-body: 400 1rem/1.6 var(--font-sans);            /* 16px */
+  --text-sm: 400 0.875rem/1.5 var(--font-sans);          /* 14px — default card text */
+  --text-xs: 400 0.75rem/1.5 var(--font-sans);           /* 12px — captions */
+
+  --size-display: 3rem;
+  --size-h1: 2.25rem;
+  --size-h2: 1.5rem;
+  --size-lg: 1.125rem;
+  --size-base: 1rem;
+  --size-sm: 0.875rem;
+  --size-xs: 0.75rem;
+  --size-2xs: 0.6875rem;   /* 11px — sub-labels, fine print */
+  --size-3xs: 0.625rem;    /* 10px — eyebrow / badge text */
+
+  /* ---- Line heights --------------------------------------------------- */
+  --leading-tight: 1.1;
+  --leading-snug: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.6;
+
+  /* ---- Letter spacing ------------------------------------------------- */
+  --tracking-tight: -0.02em;   /* page titles */
+  --tracking-normal: 0;
+  --tracking-wide: 0.05em;
+  --tracking-eyebrow: 0.2em;   /* THE eyebrow — uppercase section labels */
+  --tracking-eyebrow-tight: 0.15em;  /* slightly tighter eyebrow on cards */
+}

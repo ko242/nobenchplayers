@@ -1,0 +1,55 @@
+/* ============================================================================
+ * EvoToca Development Index — base layer
+ *
+ * Minimal global defaults so a bare HTML page picks up the EDI look (dark
+ * canvas, near-white text, Plus Jakarta Sans) the moment it links styles.css.
+ * Component classes live in the React components, not here.
+ * ==========================================================================*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font: var(--text-sm);
+  letter-spacing: var(--tracking-normal);
+}
+
+/* Selection uses the brand */
+::selection {
+  background: var(--brand-yellow);
+  color: var(--brand-yellow-foreground);
+}
+
+/* The EDI eyebrow — reusable utility for the all-caps tracked label */
+.edi-eyebrow {
+  font-size: var(--size-xs);
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--brand-yellow);
+}
+.edi-eyebrow--muted {
+  color: var(--muted-foreground);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Tabular numbers for stats/scores — EDI leans on tabular-nums heavily */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
